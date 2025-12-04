@@ -6,7 +6,7 @@ import heroBg from '../assets/hero-bg-final.png';
 const Hero: React.FC = () => {
     return (
         <div
-            className="relative min-h-screen flex flex-col items-center justify-between py-20 overflow-hidden bg-cover bg-center bg-no-repeat"
+            className="relative min-h-screen flex flex-col items-center justify-between pt-20 pb-40 overflow-hidden bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${heroBg})` }}
         >
             {/* Overlay to ensure text readability if needed, though the image is bright */}
@@ -67,25 +67,7 @@ const Hero: React.FC = () => {
                 </motion.div>
             </div>
 
-            {/* Bottom Buttons Area */}
-            <div className="relative z-10 w-full max-w-6xl mx-auto px-4 mb-10">
-                <motion.div
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.8 }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6"
-                >
-                    <MinecraftButton variant="wood" fullWidth className="text-lg py-4 border-4">
-                        REGISTER NOW
-                    </MinecraftButton>
-                    <MinecraftButton variant="wood" fullWidth className="text-lg py-4 border-4">
-                        COMMUNITY HACKATHON
-                    </MinecraftButton>
-                    <MinecraftButton variant="wood" fullWidth className="text-lg py-4 border-4">
-                        BUILD TOGETHER
-                    </MinecraftButton>
-                </motion.div>
-            </div>
+
         </div>
     );
 };
