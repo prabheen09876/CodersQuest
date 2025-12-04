@@ -10,7 +10,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
     return (
         <div
-            className="relative min-h-screen flex flex-col items-center justify-between py-20 overflow-hidden bg-cover bg-center bg-no-repeat"
+            className="relative min-h-screen flex flex-col items-center justify-between pt-20 pb-40 overflow-hidden bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${heroBg})` }}
         >
             {/* Overlay to ensure text readability if needed, though the image is bright */}
@@ -75,6 +75,7 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
                 </motion.div>
             </div>
 
+<<<<<<< HEAD
             {/* Bottom Buttons Area */}
             <div className="relative z-10 w-full max-w-6xl mx-auto px-4 mb-10">
                 <motion.div
@@ -99,6 +100,9 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
                     </MinecraftButton>
                 </motion.div>
             </div>
+=======
+
+>>>>>>> 2ec0ac70ecf9e80e649af4f3073ef17d8f109234
         </div>
     );
 };
