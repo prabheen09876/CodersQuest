@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-minecraft-sky font-pixel overflow-x-hidden;
+    cursor: url("/assets/cursor-sword.png"), auto;
+  }
+}
+
+/* Custom scrollbar for that Minecraft feel */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-minecraft-dirt;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-minecraft-stone border-2 border-minecraft-obsidian;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
