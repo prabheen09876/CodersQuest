@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 import MinecraftButton from './MinecraftButton';
 import heroBg from '../assets/hero-bg-final.png';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+    onRegisterClick?: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
     return (
         <div
             className="relative min-h-screen flex flex-col items-center justify-between py-20 overflow-hidden bg-cover bg-center bg-no-repeat"
@@ -61,7 +65,11 @@ const Hero: React.FC = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.5 }}
                 >
-                    <MinecraftButton variant="wood" className="text-xl px-10 py-4 border-4">
+                    <MinecraftButton 
+                        variant="wood" 
+                        className="text-xl px-10 py-4 border-4"
+                        onClick={onRegisterClick}
+                    >
                         REGISTER NOW
                     </MinecraftButton>
                 </motion.div>
@@ -75,7 +83,12 @@ const Hero: React.FC = () => {
                     transition={{ delay: 0.8 }}
                     className="grid grid-cols-1 md:grid-cols-3 gap-6"
                 >
-                    <MinecraftButton variant="wood" fullWidth className="text-lg py-4 border-4">
+                    <MinecraftButton 
+                        variant="wood" 
+                        fullWidth 
+                        className="text-lg py-4 border-4"
+                        onClick={onRegisterClick}
+                    >
                         REGISTER NOW
                     </MinecraftButton>
                     <MinecraftButton variant="wood" fullWidth className="text-lg py-4 border-4">

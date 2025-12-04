@@ -25,3 +25,427 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-400;
 }
+
+/* Nether Registration Form Styles */
+
+/* Enhanced image quality for Nether background */
+.nether-background-enhanced {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  filter: contrast(1.1) brightness(0.95) saturate(1.2);
+  position: relative;
+}
+
+.nether-background-enhanced::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    /* Subtle overlay to enhance depth */
+    radial-gradient(circle at 20% 50%, rgba(255, 69, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(255, 69, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(255, 100, 0, 0.12) 0%, transparent 45%);
+  animation: heatHaze 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+.nether-background-enhanced::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 69, 0, 0.05) 25%,
+      rgba(255, 100, 0, 0.08) 50%,
+      rgba(255, 69, 0, 0.05) 75%,
+      transparent 100%
+    );
+  background-size: 200% 100%;
+  animation: lavaFlow 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Enhanced Nether Background with Multiple Layers */
+.nether-background {
+  position: relative;
+  background: 
+    /* Base dark netherrack */
+    linear-gradient(180deg, #0a0000 0%, #1a0000 25%, #0d0000 50%, #1a0000 75%, #0a0000 100%),
+    /* Lava pools and streams */
+    radial-gradient(ellipse 80% 40% at 20% 80%, rgba(255, 69, 0, 0.4) 0%, rgba(139, 0, 0, 0.3) 30%, transparent 60%),
+    radial-gradient(ellipse 60% 30% at 80% 70%, rgba(255, 100, 0, 0.35) 0%, rgba(200, 0, 0, 0.25) 40%, transparent 70%),
+    radial-gradient(ellipse 50% 25% at 50% 90%, rgba(255, 69, 0, 0.3) 0%, rgba(139, 0, 0, 0.2) 35%, transparent 65%),
+    /* Glowing embers in the distance */
+    radial-gradient(circle at 15% 30%, rgba(255, 69, 0, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(255, 100, 0, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 50% 10%, rgba(255, 69, 0, 0.1) 0%, transparent 30%),
+    /* Dark netherrack texture overlay */
+    repeating-linear-gradient(
+      45deg,
+      rgba(20, 0, 0, 0.1) 0px,
+      rgba(20, 0, 0, 0.1) 2px,
+      rgba(10, 0, 0, 0.1) 2px,
+      rgba(10, 0, 0, 0.1) 4px
+    ),
+    /* Base gradient */
+    linear-gradient(135deg, #0a0000 0%, #1a0000 50%, #0d0000 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 20px 20px, 100% 100%;
+  animation: netherPulse 12s ease-in-out infinite;
+}
+
+/* Animated heat haze and lava glow overlay */
+.nether-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 69, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(255, 69, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(255, 100, 0, 0.12) 0%, transparent 45%);
+  animation: heatHaze 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Lava flow animation overlay */
+.nether-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 69, 0, 0.05) 25%,
+      rgba(255, 100, 0, 0.08) 50%,
+      rgba(255, 69, 0, 0.05) 75%,
+      transparent 100%
+    );
+  background-size: 200% 100%;
+  animation: lavaFlow 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes netherPulse {
+  0%, 100% {
+    background-position: 
+      0% 0%, 
+      20% 80%, 
+      80% 70%, 
+      50% 90%, 
+      15% 30%, 
+      85% 20%, 
+      50% 10%, 
+      0 0, 
+      0% 0%;
+    filter: brightness(0.9);
+  }
+  50% {
+    background-position: 
+      0% 0%, 
+      25% 75%, 
+      75% 75%, 
+      55% 85%, 
+      20% 35%, 
+      80% 25%, 
+      45% 15%, 
+      0 0, 
+      0% 0%;
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes lavaFlow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes heatHaze {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+/* Falling Ash Particles */
+.ash-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ash-container::before,
+.ash-container::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 69, 0, 0.6);
+  border-radius: 50%;
+  animation: fallingAsh 10s linear infinite; /* Sped up slightly */
+  box-shadow: 
+    0 0 6px rgba(255, 69, 0, 0.8),
+    100px 200px 0 0 rgba(255, 69, 0, 0.4),
+    200px 400px 0 0 rgba(255, 69, 0, 0.5),
+    300px 100px 0 0 rgba(255, 69, 0, 0.3),
+    400px 300px 0 0 rgba(255, 69, 0, 0.4),
+    500px 500px 0 0 rgba(255, 69, 0, 0.3),
+    600px 150px 0 0 rgba(255, 69, 0, 0.5),
+    700px 350px 0 0 rgba(255, 69, 0, 0.4),
+    800px 250px 0 0 rgba(255, 69, 0, 0.3),
+    900px 450px 0 0 rgba(255, 69, 0, 0.4),
+    /* Added more particles */
+    150px 550px 0 0 rgba(255, 69, 0, 0.5),
+    350px 650px 0 0 rgba(255, 69, 0, 0.4),
+    550px 750px 0 0 rgba(255, 69, 0, 0.3),
+    750px 850px 0 0 rgba(255, 69, 0, 0.5),
+    50px 900px 0 0 rgba(255, 69, 0, 0.4),
+    250px 50px 0 0 rgba(255, 69, 0, 0.3),
+    450px 150px 0 0 rgba(255, 69, 0, 0.5),
+    650px 250px 0 0 rgba(255, 69, 0, 0.4),
+    850px 350px 0 0 rgba(255, 69, 0, 0.3),
+    950px 450px 0 0 rgba(255, 69, 0, 0.4);
+}
+
+.ash-container::before {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.ash-container::after {
+  left: 50%;
+  animation-delay: 5s;
+}
+
+@keyframes fallingAsh {
+  0% {
+    transform: translateY(-100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* Rising Ember Particles */
+.ember-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ember-container::before,
+.ember-container::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 200, 0, 0.8);
+  border-radius: 50%;
+  animation: risingEmbers 8s linear infinite;
+  box-shadow: 
+    0 0 8px rgba(255, 200, 0, 0.9),
+    120px -200px 0 0 rgba(255, 150, 0, 0.6),
+    240px -400px 0 0 rgba(255, 100, 0, 0.7),
+    360px -100px 0 0 rgba(255, 200, 0, 0.5),
+    480px -300px 0 0 rgba(255, 150, 0, 0.6),
+    600px -500px 0 0 rgba(255, 100, 0, 0.5),
+    720px -150px 0 0 rgba(255, 200, 0, 0.7),
+    840px -350px 0 0 rgba(255, 150, 0, 0.6),
+    960px -250px 0 0 rgba(255, 100, 0, 0.5),
+    50px -450px 0 0 rgba(255, 200, 0, 0.6),
+    /* More embers */
+    180px -550px 0 0 rgba(255, 150, 0, 0.7),
+    300px -650px 0 0 rgba(255, 100, 0, 0.5),
+    420px -750px 0 0 rgba(255, 200, 0, 0.6),
+    540px -850px 0 0 rgba(255, 150, 0, 0.7),
+    660px -900px 0 0 rgba(255, 100, 0, 0.5),
+    780px -50px 0 0 rgba(255, 200, 0, 0.6),
+    900px -150px 0 0 rgba(255, 150, 0, 0.7),
+    60px -250px 0 0 rgba(255, 100, 0, 0.5),
+    200px -350px 0 0 rgba(255, 200, 0, 0.6);
+}
+
+.ember-container::before {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.ember-container::after {
+  left: 60%;
+  animation-delay: 4s;
+}
+
+@keyframes risingEmbers {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20vh) translateX(-30px);
+    opacity: 0;
+  }
+}
+
+/* Pulsating Purple Border Glow */
+.nether-portal-container {
+  position: relative;
+  box-shadow: 
+    0 0 20px rgba(160, 32, 240, 0.5),
+    0 0 40px rgba(160, 32, 240, 0.3),
+    inset 0 0 20px rgba(160, 32, 240, 0.1);
+}
+
+.nether-border-glow {
+  animation: borderPulse 3s ease-in-out infinite;
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: rgb(147, 51, 234);
+    box-shadow: 
+      0 0 20px rgba(160, 32, 240, 0.5),
+      0 0 40px rgba(160, 32, 240, 0.3),
+      inset 0 0 20px rgba(160, 32, 240, 0.1);
+  }
+  50% {
+    border-color: rgb(192, 132, 252);
+    box-shadow: 
+      0 0 30px rgba(160, 32, 240, 0.8),
+      0 0 60px rgba(160, 32, 240, 0.5),
+      inset 0 0 30px rgba(160, 32, 240, 0.2);
+  }
+}
+
+/* Nether Input Styling (Depressed Basalt Slab) */
+.nether-input {
+  position: relative;
+  box-shadow: 
+    inset 4px 4px 8px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.nether-input:focus {
+  box-shadow: 
+    inset 4px 4px 8px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 4px rgba(255, 69, 0, 0.2),
+    0 0 15px rgba(255, 69, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nether-input::placeholder {
+  color: rgba(255, 69, 0, 0.4);
+}
+
+/* Magma Block Button with Nether Bricks Texture */
+.magma-button {
+  /* Base styles - background image will be added via inline styles in component */
+  border: 4px solid #FF4500;
+  box-shadow: 
+    0 0 20px rgba(255, 69, 0, 0.8),
+    0 0 40px rgba(255, 69, 0, 0.5),
+    inset 0 0 20px rgba(255, 69, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: magmaGlow 2s ease-in-out infinite;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.magma-button::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: 
+    /* Glowing lava overlay */
+    linear-gradient(135deg, rgba(255, 69, 0, 0.4) 0%, rgba(255, 140, 0, 0.3) 50%, rgba(255, 69, 0, 0.4) 100%);
+  background-size: 200% 200%;
+  animation: magmaFlow 3s linear infinite;
+  z-index: 2;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.magma-button:hover {
+  box-shadow: 
+    0 0 30px rgba(255, 69, 0, 1),
+    0 0 60px rgba(255, 69, 0, 0.7),
+    inset 0 0 30px rgba(255, 69, 0, 0.5),
+    0 6px 12px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.magma-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 0 15px rgba(255, 69, 0, 0.6),
+    0 0 30px rgba(255, 69, 0, 0.4),
+    inset 0 0 15px rgba(255, 69, 0, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes magmaGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(255, 69, 0, 0.8),
+      0 0 40px rgba(255, 69, 0, 0.5),
+      inset 0 0 20px rgba(255, 69, 0, 0.3),
+      0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(255, 69, 0, 1),
+      0 0 60px rgba(255, 69, 0, 0.7),
+      inset 0 0 30px rgba(255, 69, 0, 0.5),
+      0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes magmaFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
