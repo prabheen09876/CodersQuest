@@ -10,6 +10,7 @@ import Schedule from './components/Schedule';
 import SponsorsSection from './components/SponsorsSection';
 import LegendarySponsors from './components/LegendarySponsors';
 import SponsorTiers from './components/SponsorTiers';
+import ThemesPage from './components/ThemesPage';
 
 function App() {
   const [showRegistration, setShowRegistration] = useState(false);
@@ -57,6 +58,7 @@ function App() {
           } />
           <Route path="/rules" element={<Rules />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/themes" element={<ThemesPage />} />
         </Routes>
       </div>
     </Router>

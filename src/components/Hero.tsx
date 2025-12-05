@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import MinecraftButton from './MinecraftButton';
 import heroBg from '../assets/hero-bg-final.png';
 
@@ -8,6 +9,7 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
+    const navigate = useNavigate();
     return (
         <div
             className="relative min-h-screen flex flex-col items-center justify-between pt-20 pb-40 overflow-hidden bg-cover bg-center bg-no-repeat"
@@ -87,9 +89,9 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
                         variant="wood" 
                         fullWidth 
                         className="text-lg py-4 border-4"
-                        onClick={onRegisterClick}
+                        onClick={() => navigate('/themes')}
                     >
-                        REGISTER NOW
+                        THEMES
                     </MinecraftButton>
                     <MinecraftButton variant="wood" fullWidth className="text-lg py-4 border-4">
                         COMMUNITY HACKATHON
