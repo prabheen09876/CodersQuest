@@ -4,7 +4,6 @@ import goldTexture from '../assets/texture-gold.png';
 import ironTexture from '../assets/texture-iron.png';
 import stoneTexture from '../assets/texture-stone.png';
 import logoPlaceholder from '../assets/logo-placeholder.png';
-import sponsorsBg from '../assets/bg-sponsors.png';
 
 const SponsorBlock = ({ tier, name, size = 'md' }: { tier: string, name: string, size?: 'sm' | 'md' | 'lg' }) => {
   const sizeClasses = {
@@ -40,10 +39,9 @@ const SponsorsSection = () => {
 
   return (
     <section className="bg-[#1a1a1a] relative overflow-hidden py-16 px-4">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0" 
-           style={{ backgroundImage: `url(${sponsorsBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-      <div className="absolute inset-0 bg-black/60 z-0" />
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none" 
+           style={{ backgroundImage: `url(${stoneTexture})`, backgroundSize: '64px' }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl font-minecraft text-center text-white mb-16 drop-shadow-lg">
@@ -54,9 +52,9 @@ const SponsorsSection = () => {
         <div className="flex flex-wrap justify-center gap-8">
           
           {/* Platinum */}
-          <div className="w-full md:w-[45%] lg:w-[22%] flex flex-col items-center rounded-lg border-4 border-white/20 p-6 min-h-[300px] relative overflow-hidden group">
-            <div className="absolute inset-0 z-0" style={{ backgroundImage: `url(${diamondTexture})`, backgroundSize: '64px' }} />
-            <div className="absolute inset-0 bg-black/10 z-0" />
+          <div className="w-full md:w-[45%] lg:w-[22%] flex flex-col items-center rounded-lg border-4 border-white/20 p-6 min-h-[300px] relative overflow-visible">
+            <div className="absolute inset-0 z-0 opacity-80 rounded-lg overflow-hidden" style={{ backgroundImage: `url(${diamondTexture})`, backgroundSize: '64px' }} />
+            <div className="absolute inset-0 bg-black/30 z-0 rounded-lg" />
             
             <div className="relative z-10 flex flex-col items-center w-full">
               <h3 className="text-[#55FFFF] font-minecraft mb-6 text-xl shadow-black drop-shadow-md text-center bg-black/50 px-4 py-1 rounded">PLATINUM TIER</h3>
@@ -69,9 +67,9 @@ const SponsorsSection = () => {
           </div>
 
           {/* Gold */}
-          <div className="w-full md:w-[45%] lg:w-[22%] flex flex-col items-center rounded-lg border-4 border-white/20 p-6 min-h-[300px] relative overflow-hidden">
-            <div className="absolute inset-0 z-0" style={{ backgroundImage: `url(${goldTexture})`, backgroundSize: '64px' }} />
-            <div className="absolute inset-0 bg-black/10 z-0" />
+          <div className="w-full md:w-[45%] lg:w-[22%] flex flex-col items-center rounded-lg border-4 border-white/20 p-6 min-h-[300px] relative overflow-visible">
+            <div className="absolute inset-0 z-0 opacity-80 rounded-lg overflow-hidden" style={{ backgroundImage: `url(${goldTexture})`, backgroundSize: '64px' }} />
+            <div className="absolute inset-0 bg-black/30 z-0 rounded-lg" />
 
             <div className="relative z-10 flex flex-col items-center w-full">
               <h3 className="text-[#FFAA00] font-minecraft mb-6 text-xl shadow-black drop-shadow-md text-center bg-black/50 px-4 py-1 rounded">GOLD TIER</h3>
@@ -84,9 +82,9 @@ const SponsorsSection = () => {
           </div>
 
           {/* Silver */}
-          <div className="w-full md:w-[45%] lg:w-[22%] flex flex-col items-center rounded-lg border-4 border-white/20 p-6 min-h-[300px] relative overflow-hidden">
-            <div className="absolute inset-0 z-0" style={{ backgroundImage: `url(${ironTexture})`, backgroundSize: '64px' }} />
-            <div className="absolute inset-0 bg-black/10 z-0" />
+          <div className="w-full md:w-[45%] lg:w-[22%] flex flex-col items-center rounded-lg border-4 border-white/20 p-6 min-h-[300px] relative overflow-visible">
+            <div className="absolute inset-0 z-0 opacity-80 rounded-lg overflow-hidden" style={{ backgroundImage: `url(${ironTexture})`, backgroundSize: '64px' }} />
+            <div className="absolute inset-0 bg-black/30 z-0 rounded-lg" />
 
             <div className="relative z-10 flex flex-col items-center w-full">
               <h3 className="text-[#AAAAAA] font-minecraft mb-6 text-xl shadow-black drop-shadow-md text-center bg-black/50 px-4 py-1 rounded">SILVER TIER</h3>
@@ -99,9 +97,9 @@ const SponsorsSection = () => {
           </div>
 
           {/* Bronze */}
-          <div className="w-full md:w-[45%] lg:w-[22%] flex flex-col items-center rounded-lg border-4 border-white/20 p-6 min-h-[300px] relative overflow-hidden">
-            <div className="absolute inset-0 z-0" style={{ backgroundImage: `url(${stoneTexture})`, backgroundSize: '64px' }} />
-            <div className="absolute inset-0 bg-black/10 z-0" />
+          <div className="w-full md:w-[45%] lg:w-[22%] flex flex-col items-center rounded-lg border-4 border-white/20 p-6 min-h-[300px] relative overflow-visible">
+            <div className="absolute inset-0 z-0 opacity-80 rounded-lg overflow-hidden" style={{ backgroundImage: `url(${stoneTexture})`, backgroundSize: '64px' }} />
+            <div className="absolute inset-0 bg-black/30 z-0 rounded-lg" />
 
             <div className="relative z-10 flex flex-col items-center w-full">
               <h3 className="text-[#AA5500] font-minecraft mb-6 text-xl shadow-black drop-shadow-md text-center bg-black/50 px-4 py-1 rounded">BRONZE TIER</h3>
