@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import bgSponsors from '../assets/bg-sponsors.png';
 
 interface SponsorTierData {
   id: string;
@@ -95,15 +96,19 @@ const SponsorTiers: React.FC = () => {
   const regularTiers = tiers.slice(2);
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4 py-8 pointer-events-auto">
-      <div className="text-center mb-8">
+    <section 
+      className="relative w-full py-16 px-4 bg-cover bg-center bg-no-repeat bg-fixed"
+      style={{ backgroundImage: `url(${bgSponsors})` }}
+    >
+      <div className="w-full max-w-7xl mx-auto pointer-events-auto">
+        <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-white tracking-widest uppercase mb-2"
             style={{ textShadow: '2px 2px 0px #000' }}>
           SPONSOR TIERS
         </h2>
-      </div>
+        </div>
 
-      <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4">
         {/* Special Partners Container */}
         <div className="border-4 border-cyan-500 bg-gray-900/80 p-1 rounded-sm shadow-[0_0_15px_rgba(6,182,212,0.3)]">
           <div className="bg-gray-800/50 p-2 mb-2 text-center border-b-2 border-cyan-500/30">
@@ -126,7 +131,8 @@ const SponsorTiers: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 };
 

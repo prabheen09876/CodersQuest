@@ -4,6 +4,7 @@ import goldTexture from '../assets/texture-gold.png';
 import ironTexture from '../assets/texture-iron.png';
 import stoneTexture from '../assets/texture-stone.png';
 import logoPlaceholder from '../assets/logo-placeholder.png';
+import bgSponsors from '../assets/bg-sponsors.png';
 
 const SponsorBlock = ({ tier, name, size = 'md' }: { tier: string, name: string, size?: 'sm' | 'md' | 'lg' }) => {
   const sizeClasses = {
@@ -38,10 +39,10 @@ const SponsorsSection = () => {
   };
 
   return (
-    <section className="bg-[#1a1a1a] relative overflow-hidden py-16 px-4">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" 
-           style={{ backgroundImage: `url(${stoneTexture})`, backgroundSize: '64px' }} />
+    <section 
+      className="relative overflow-hidden py-16 px-4 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${bgSponsors})` }}
+    >
 
       <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl font-minecraft text-center text-white mb-16 drop-shadow-lg">

@@ -9,6 +9,7 @@ import Rules from './components/Rules';
 import Schedule from './components/Schedule';
 import SponsorsSection from './components/SponsorsSection';
 import LegendarySponsors from './components/LegendarySponsors';
+import SponsorTiers from './components/SponsorTiers';
 
 function App() {
   const [showRegistration, setShowRegistration] = useState(false);
@@ -50,6 +51,7 @@ function App() {
               <About />
               <SponsorsSection />
               <LegendarySponsors />
+              <SponsorTiers />
               <EventDetails />
             </>
           } />
