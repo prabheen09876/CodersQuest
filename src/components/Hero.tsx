@@ -75,7 +75,6 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
                 </motion.div>
             </div>
 
-<<<<<<< HEAD
             {/* Bottom Buttons Area */}
             <div className="relative z-10 w-full max-w-6xl mx-auto px-4 mb-10">
                 <motion.div
@@ -100,9 +99,6 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
                     </MinecraftButton>
                 </motion.div>
             </div>
-=======
-
->>>>>>> 2ec0ac70ecf9e80e649af4f3073ef17d8f109234
         </div>
     );
 };

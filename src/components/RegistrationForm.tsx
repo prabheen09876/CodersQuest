@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import netherBricksTexture from '../assets/nether-bricks-texture.png';
+import netherBgRegular from '../assets/nether-bg.png';
 
-import netherBg from '../assets/nether-bg-high-res.png';
+// If high-res image causes 500 errors, use netherBgRegular directly instead
+// High-res images can sometimes be too large for Vite to process during dev
+// Uncomment the line below and comment out the high-res import to use regular image:
+// const netherBg = netherBgRegular;
+
+// Try importing high-res - if this causes errors, use the regular image instead
+import netherBgHighRes from '../assets/nether-bg-high-res.png';
+const netherBg = netherBgHighRes;
 
 interface FormData {
     fullName: string;
@@ -55,11 +63,27 @@ const RegistrationForm: React.FC = () => {
         // Handle form submission here
     };
 
+    // Use the selected background image
+    // If you're getting 500 errors, change netherBg to netherBgRegular above
+    const [bgImage, setBgImage] = useState(netherBg);
+
+    useEffect(() => {
+        // Test if the image loads, fallback to regular if it doesn't
+        const img = new Image();
+        img.onerror = () => {
+            setBgImage(netherBgRegular);
+        };
+        img.onload = () => {
+            // Image loaded successfully
+        };
+        img.src = netherBg;
+    }, []);
+
     return (
         <div 
             className="min-h-screen bg-gray-950 relative overflow-hidden nether-background-enhanced" 
             style={{ 
-                backgroundImage: `url(${netherBg})`, 
+                backgroundImage: `url(${bgImage})`, 
                 backgroundSize: 'cover', 
                 backgroundPosition: 'center',
                 imageRendering: 'crisp-edges',
