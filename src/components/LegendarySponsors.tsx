@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import MinecraftButton from './MinecraftButton';
 import obsidianTexture from '../assets/texture-obsidian.png';
 import beaconTexture from '../assets/texture-beacon.png';
 import netheriteTexture from '../assets/texture-netherite.png';
@@ -6,6 +8,7 @@ import logoPlaceholder from '../assets/logo-placeholder.png';
 import logoTitleSponsor from '../assets/logo-title-sponsor.svg';
 
 const LegendarySponsors = () => {
+  const navigate = useNavigate();
   const sponsors = {
     title: 'Acme Corp',
     coTitle: ['ThinkBig', 'Data Corp', 'Pixel Foods', 'StartUp Hub']
@@ -67,6 +70,17 @@ const LegendarySponsors = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Call to Action Button */}
+        <div className="mt-16 flex justify-center">
+            <MinecraftButton 
+                variant="diamond" 
+                className="text-lg px-8 py-3 border-4 animate-pulse hover:animate-none"
+                onClick={() => navigate('/sponsor-tiers')}
+            >
+                WANNA SPONSOR US?
+            </MinecraftButton>
         </div>
       </div>
     </section>

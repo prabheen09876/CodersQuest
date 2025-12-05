@@ -9,8 +9,8 @@ import Rules from './components/Rules';
 import Schedule from './components/Schedule';
 import SponsorsSection from './components/SponsorsSection';
 import LegendarySponsors from './components/LegendarySponsors';
-import SponsorTiers from './components/SponsorTiers';
 import ThemesPage from './components/ThemesPage';
+import SponsorsPage from './components/SponsorsPage';
 
 function App() {
   const [showRegistration, setShowRegistration] = useState(false);
@@ -52,13 +52,13 @@ function App() {
               <About />
               <SponsorsSection />
               <LegendarySponsors />
-              <SponsorTiers />
               <EventDetails />
             </>
           } />
           <Route path="/rules" element={<Rules />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/themes" element={<ThemesPage />} />
+          <Route path="/sponsor-tiers" element={<SponsorsPage />} />
         </Routes>
       </div>
     </Router>
