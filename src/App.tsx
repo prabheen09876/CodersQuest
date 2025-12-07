@@ -1,12 +1,17 @@
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import About from './components/About';
 import EventDetails from './components/EventDetails';
+import RegistrationForm from './components/RegistrationForm';
 import { MinecraftNavBar } from './components/MinecraftNavBar';
 import MinecraftHUD from './components/MinecraftHUD';
 import Rules from './components/Rules';
 import Schedule from './components/Schedule';
-import RegistrationForm from './components/RegistrationForm';
+import SponsorsSection from './components/SponsorsSection';
+import LegendarySponsors from './components/LegendarySponsors';
+import ThemesPage from './components/ThemesPage';
+import SponsorsPage from './components/SponsorsPage';
 
 function App() {
   return (
@@ -19,12 +24,16 @@ function App() {
             <>
               <Hero />
               <About />
+              <SponsorsSection />
+              <LegendarySponsors />
               <EventDetails />
             </>
           } />
           <Route path="/rules" element={<Rules />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/register" element={<RegistrationForm />} />
+          <Route path="/themes" element={<ThemesPage />} />
+          <Route path="/sponsor-tiers" element={<SponsorsPage />} />
         </Routes>
       </div>
     </Router>
