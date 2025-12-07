@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import MinecraftButton from './MinecraftButton';
 import heroBg from '../assets/hero-bg-final.png';
 
@@ -8,6 +9,15 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
+    const navigate = useNavigate();
+
+    const handleRegister = () => {
+        if (onRegisterClick) {
+            onRegisterClick();
+        } else {
+            navigate('/register');
+        }
+    };
     return (
         <div
             className="relative min-h-screen flex flex-col items-center justify-between pt-20 pb-40 overflow-hidden bg-cover bg-center bg-no-repeat"
@@ -65,44 +75,16 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.5 }}
                 >
-                    <MinecraftButton 
-                        variant="wood" 
+                    <MinecraftButton
+                        variant="wood"
                         className="text-xl px-10 py-4 border-4"
-                        onClick={onRegisterClick}
+                        onClick={handleRegister}
                     >
                         REGISTER NOW
                     </MinecraftButton>
                 </motion.div>
             </div>
 
-<<<<<<< HEAD
-            {/* Bottom Buttons Area */}
-            <div className="relative z-10 w-full max-w-6xl mx-auto px-4 mb-10">
-                <motion.div
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.8 }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6"
-                >
-                    <MinecraftButton 
-                        variant="wood" 
-                        fullWidth 
-                        className="text-lg py-4 border-4"
-                        onClick={onRegisterClick}
-                    >
-                        REGISTER NOW
-                    </MinecraftButton>
-                    <MinecraftButton variant="wood" fullWidth className="text-lg py-4 border-4">
-                        COMMUNITY HACKATHON
-                    </MinecraftButton>
-                    <MinecraftButton variant="wood" fullWidth className="text-lg py-4 border-4">
-                        BUILD TOGETHER
-                    </MinecraftButton>
-                </motion.div>
-            </div>
-=======
-
->>>>>>> 2ec0ac70ecf9e80e649af4f3073ef17d8f109234
         </div>
     );
 };
