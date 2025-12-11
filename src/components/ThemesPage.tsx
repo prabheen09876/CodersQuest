@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import themesBg from '../assets/themes-bg.png';
+import ThemeIcon from './ThemeIcon';
 
 // --- Types ---
 interface ThemeData {
@@ -45,6 +46,46 @@ const themes: ThemeData[] = [
     glowClass: 'shadow-[0_0_20px_#FFD700]',
     iconPlaceholderColor: 'bg-yellow-400',
   },
+  {
+    id: 'web-app',
+    title: 'WEB & APP DEV',
+    description: 'Craft digital experiences.',
+    color: '#3B82F6', // Blue
+    glowClass: 'shadow-[0_0_20px_#3B82F6]',
+    iconPlaceholderColor: 'bg-blue-500',
+  },
+  {
+    id: 'ar-vr',
+    title: 'AR / VR DEV',
+    description: 'Immersive realities.',
+    color: '#EC4899', // Pink
+    glowClass: 'shadow-[0_0_20px_#EC4899]',
+    iconPlaceholderColor: 'bg-pink-500',
+  },
+  {
+    id: 'game-dev',
+    title: 'GAME DEVELOPMENT',
+    description: 'Play your own rules.',
+    color: '#F97316', // Orange
+    glowClass: 'shadow-[0_0_20px_#F97316]',
+    iconPlaceholderColor: 'bg-orange-500',
+  },
+  {
+    id: 'data-science',
+    title: 'DATA SCIENCE',
+    description: 'Uncover hidden insights.',
+    color: '#10B981', // Emerald
+    glowClass: 'shadow-[0_0_20px_#10B981]',
+    iconPlaceholderColor: 'bg-emerald-500',
+  },
+  {
+    id: 'iot-robotics',
+    title: 'IOT & ROBOTICS',
+    description: 'Automate the world.',
+    color: '#EF4444', // Red
+    glowClass: 'shadow-[0_0_20px_#EF4444]',
+    iconPlaceholderColor: 'bg-red-500',
+  },
 ];
 
 // --- Component ---
@@ -65,10 +106,14 @@ const ThemesPage: React.FC = () => {
 
   return (
     <div 
-      className="relative w-full min-h-screen overflow-hidden bg-cover bg-center bg-no-repeat font-minecraft text-white flex flex-col items-center justify-center p-4"
-      style={{ backgroundImage: `url(${themesBg})` }}
+      className="relative w-full h-screen overflow-hidden font-minecraft text-white"
     >
-      
+      {/* Fixed Background Layer */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${themesBg})` }}
+      ></div>
+
       {/* --- Styles for Animations --- */}
       <style>{`
         @keyframes bubble-rise {
@@ -96,31 +141,34 @@ const ThemesPage: React.FC = () => {
         }
       `}</style>
 
-      {/* --- Background Elements --- */}
-      {/* Overlay to darken bottom */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+      {/* --- Fixed Background Elements (Overlay/Bubbles/Creatures) --- */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Overlay to darken bottom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          
+          {/* Bubbles */}
+          {bubbles.map((b) => (
+            <div
+              key={b.id}
+              className="bubble"
+              style={{
+                left: `${b.left}%`,
+                width: `${b.size}px`,
+                height: `${b.size}px`,
+                animationDuration: `${b.duration}s`,
+                animationDelay: `${b.id * 0.5}s`,
+              }}
+            />
+          ))}
+
+          {/* Creature Silhouettes (CSS approximations) */}
+          <div className="absolute top-20 left-10 w-32 h-12 bg-black/20 rounded-full blur-sm rotate-12 opacity-50" />
+          <div className="absolute top-40 right-20 w-48 h-16 bg-black/20 rounded-full blur-sm -rotate-6 opacity-50" />
+      </div>
+
+      {/* Scrollable Content Layer */}
+      <div className="absolute inset-0 z-10 overflow-x-hidden overflow-y-auto flex flex-col items-center justify-start pt-32 pb-20 px-4">
       
-      {/* Bubbles */}
-      {bubbles.map((b) => (
-        <div
-          key={b.id}
-          className="bubble"
-          style={{
-            left: `${b.left}%`,
-            width: `${b.size}px`,
-            height: `${b.size}px`,
-            animationDuration: `${b.duration}s`,
-            animationDelay: `${b.id * 0.5}s`,
-          }}
-        />
-      ))}
-
-      {/* Creature Silhouettes (CSS approximations) */}
-      <div className="absolute top-20 left-10 w-32 h-12 bg-black/20 rounded-full blur-sm rotate-12 opacity-50 pointer-events-none" />
-      <div className="absolute top-40 right-20 w-48 h-16 bg-black/20 rounded-full blur-sm -rotate-6 opacity-50 pointer-events-none" />
-
-
-      {/* --- Main Content --- */}
       <div className="z-10 flex flex-col items-center w-full max-w-7xl">
         
         {/* Title */}
@@ -151,14 +199,10 @@ const ThemesPage: React.FC = () => {
                 style={{ borderColor: theme.color, boxShadow: `0 -4px 10px ${theme.color}40` }}
               ></div>
 
-              {/* Icon Placeholder */}
-              <div className="w-32 h-32 mb-6 relative flex items-center justify-center">
-                 {/* This represents the "pixel art" area */}
-                 <div className={`w-24 h-24 ${theme.iconPlaceholderColor} opacity-80 animate-pulse`} style={{ clipPath: 'polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%)' }}></div>
-                 {/* Simple inner detail to make it look less generic */}
-                 <div className="absolute inset-0 flex items-center justify-center">
-                     <span className="text-4xl font-bold text-black/50 font-sans">?</span>
-                 </div>
+
+              {/* Icon Container */}
+              <div className="w-40 h-40 mb-6 relative flex items-center justify-center">
+                 <ThemeIcon id={theme.id} color={theme.color} className="w-32 h-32" />
               </div>
 
               {/* Text Content */}
@@ -184,6 +228,7 @@ const ThemesPage: React.FC = () => {
 
       </div>
       
+      </div>
     </div>
   );
 };

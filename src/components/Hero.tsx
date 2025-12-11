@@ -12,11 +12,7 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
     const navigate = useNavigate();
 
     const handleRegister = () => {
-        if (onRegisterClick) {
-            onRegisterClick();
-        } else {
-            navigate('/register');
-        }
+        window.open('https://unstop.com/p/coders-quest-20-logic-sync-1606440', '_blank');
     };
     return (
         <div
