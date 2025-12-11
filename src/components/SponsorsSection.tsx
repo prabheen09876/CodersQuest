@@ -30,6 +30,9 @@ const SponsorBlock = ({ tier, name, size = 'md' }: { tier: string, name: string,
   );
 };
 
+
+import AddSponsorBlock from './AddSponsorBlock';
+
 const SponsorsSection = () => {
   const sponsors = {
     platinum: ['Cloud Ideas', 'Pixel Corp'],
@@ -63,6 +66,7 @@ const SponsorsSection = () => {
                 {sponsors.platinum.map((name, i) => (
                   <SponsorBlock key={i} tier="Platinum" name={name} size="md" />
                 ))}
+                <AddSponsorBlock size="md" />
               </div>
             </div>
           </div>
@@ -78,6 +82,7 @@ const SponsorsSection = () => {
                 {sponsors.gold.map((name, i) => (
                   <SponsorBlock key={i} tier="Gold" name={name} size="md" />
                 ))}
+                <AddSponsorBlock size="md" />
               </div>
             </div>
           </div>
@@ -93,6 +98,7 @@ const SponsorsSection = () => {
                 {sponsors.silver.map((name, i) => (
                   <SponsorBlock key={i} tier="Silver" name={name} size="md" />
                 ))}
+                <AddSponsorBlock size="md" />
               </div>
             </div>
           </div>
@@ -108,6 +114,7 @@ const SponsorsSection = () => {
                 {sponsors.bronze.map((name, i) => (
                   <SponsorBlock key={i} tier="Bronze" name={name} size="sm" />
                 ))}
+                <AddSponsorBlock size="sm" />
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import beaconTexture from '../assets/texture-beacon.png';
 import netheriteTexture from '../assets/texture-netherite.png';
 import logoPlaceholder from '../assets/logo-placeholder.png';
 import logoTitleSponsor from '../assets/logo-title-sponsor.svg';
+import AddSponsorBlock from './AddSponsorBlock';
 
 const LegendarySponsors = () => {
   const navigate = useNavigate();
@@ -48,6 +49,8 @@ const LegendarySponsors = () => {
               <div className="text-[#55FFFF] mb-0.5">Title Sponsor</div>
               <div className="text-[#AAAAAA] italic">{sponsors.title}</div>
             </div>
+
+            {/* Removed contact overlay from here */}
           </div>
 
           {/* Co-Title Sponsors - Netherite */}
@@ -66,14 +69,17 @@ const LegendarySponsors = () => {
                     <div className="text-[#AAAAAA] mb-0.5">Co-Title Sponsor</div>
                     <div className="text-[#AAAAAA] italic">{name}</div>
                   </div>
+
+                  {/* Removed contact overlay from here */}
                 </div>
               ))}
+              <AddSponsorBlock size="lg" />
             </div>
           </div>
         </div>
 
         {/* Call to Action Button */}
-        <div className="mt-16 flex justify-center">
+        {/* <div className="mt-16 flex justify-center">
             <MinecraftButton 
                 variant="diamond" 
                 className="text-lg px-8 py-3 border-4 animate-pulse hover:animate-none"
@@ -81,7 +87,7 @@ const LegendarySponsors = () => {
             >
                 WANNA SPONSOR US?
             </MinecraftButton>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -146,6 +146,9 @@ const NeonCard: React.FC<{
         </div>
 
       </div>
+
+      {/* --- Contact Overlay --- */}
+
     </div>
   );
 };
