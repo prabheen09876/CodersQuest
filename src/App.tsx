@@ -12,10 +12,13 @@ import SponsorsSection from './components/SponsorsSection';
 import LegendarySponsors from './components/LegendarySponsors';
 import ThemesPage from './components/ThemesPage';
 import SponsorsPage from './components/SponsorsPage';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-minecraft-sky font-pixel text-white overflow-x-hidden">
         <MinecraftHUD />
         <MinecraftNavBar />
@@ -27,13 +30,14 @@ function App() {
               <SponsorsSection />
               <LegendarySponsors />
               <EventDetails />
+              <Footer />
             </>
           } />
-          <Route path="/rules" element={<Rules />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/register" element={<RegistrationForm />} />
-          <Route path="/themes" element={<ThemesPage />} />
-          <Route path="/sponsor-tiers" element={<SponsorsPage />} />
+          <Route path="/rules" element={<><Rules /><Footer /></>} />
+          <Route path="/schedule" element={<><Schedule /><Footer /></>} />
+          <Route path="/register" element={<><RegistrationForm /><Footer /></>} />
+          <Route path="/themes" element={<><ThemesPage /><Footer /></>} />
+          <Route path="/sponsor-tiers" element={<><SponsorsPage /><Footer /></>} />
         </Routes>
       </div>
     </Router>

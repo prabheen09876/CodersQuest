@@ -80,11 +80,11 @@ const RegistrationForm: React.FC = () => {
     }, []);
 
     return (
-        <div 
-            className="min-h-screen bg-gray-950 relative overflow-hidden nether-background-enhanced" 
-            style={{ 
-                backgroundImage: `url(${bgImage})`, 
-                backgroundSize: 'cover', 
+        <div
+            className="min-h-screen bg-gray-950 relative overflow-hidden nether-background-enhanced"
+            style={{
+                backgroundImage: `url(${bgImage})`,
+                backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 imageRendering: 'crisp-edges',
             }}
@@ -93,7 +93,7 @@ const RegistrationForm: React.FC = () => {
             <div className="absolute inset-0 ash-container pointer-events-none"></div>
             {/* Rising ember particles */}
             <div className="absolute inset-0 ember-container pointer-events-none"></div>
-            
+
             <div className="container mx-auto px-4 py-12 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -102,15 +102,15 @@ const RegistrationForm: React.FC = () => {
                     className="max-w-4xl mx-auto"
                 >
                     {/* Nether Portal Container */}
-                    <div className="nether-portal-container bg-black/80 backdrop-blur-sm p-8 md:p-12 border-8 border-purple-600 nether-border-glow">
+                    <div className="nether-portal-container bg-black/80 backdrop-blur-sm p-4 sm:p-8 md:p-12 border-4 sm:border-8 border-purple-600 nether-border-glow">
                         {/* Title */}
                         <motion.h1
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="font-minecraft text-3xl md:text-5xl text-center mb-2 text-lava-orange drop-shadow-[0_0_10px_rgba(255,69,0,0.8)]"
+                            className="font-minecraft text-2xl sm:text-3xl md:text-5xl text-center mb-2 text-lava-orange drop-shadow-[0_0_10px_rgba(255,69,0,0.8)]"
                         >
-                            CODERS QUEST 2.0 
+                            CODERS QUEST 2.0
                             REGISTRATION
                         </motion.h1>
                         <motion.p
@@ -128,7 +128,7 @@ const RegistrationForm: React.FC = () => {
                                 <h2 className="font-minecraft text-xl text-lava-orange mb-4 border-b-2 border-lava-orange/30 pb-2">
                                     PERSONAL INFORMATION
                                 </h2>
-                                
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block font-pixel text-sm text-lava-orange mb-2">
@@ -200,7 +200,7 @@ const RegistrationForm: React.FC = () => {
                                 <h2 className="font-minecraft text-xl text-lava-orange mb-4 border-b-2 border-lava-orange/30 pb-2">
                                     TEAM INFORMATION
                                 </h2>
-                                
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block font-pixel text-sm text-lava-orange mb-2">
@@ -241,7 +241,7 @@ const RegistrationForm: React.FC = () => {
                                 <h2 className="font-minecraft text-xl text-lava-orange mb-4 border-b-2 border-lava-orange/30 pb-2">
                                     PROFESSIONAL INFORMATION
                                 </h2>
-                                
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block font-pixel text-sm text-lava-orange mb-2">
@@ -321,7 +321,7 @@ const RegistrationForm: React.FC = () => {
                                 <h2 className="font-minecraft text-xl text-lava-orange mb-4 border-b-2 border-lava-orange/30 pb-2">
                                     ADDITIONAL INFORMATION
                                 </h2>
-                                
+
                                 <div>
                                     <label className="block font-pixel text-sm text-lava-orange mb-2">
                                         Dietary Restrictions
@@ -356,7 +356,7 @@ const RegistrationForm: React.FC = () => {
                                 <h2 className="font-minecraft text-xl text-lava-orange mb-4 border-b-2 border-lava-orange/30 pb-2">
                                     EMERGENCY CONTACT
                                 </h2>
-                                
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block font-pixel text-sm text-lava-orange mb-2">

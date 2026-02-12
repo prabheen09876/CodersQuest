@@ -105,11 +105,11 @@ const ThemesPage: React.FC = () => {
   }, []);
 
   return (
-    <div 
+    <div
       className="relative w-full h-screen overflow-hidden font-minecraft text-white"
     >
       {/* Fixed Background Layer */}
-      <div 
+      <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${themesBg})` }}
       ></div>
@@ -143,91 +143,91 @@ const ThemesPage: React.FC = () => {
 
       {/* --- Fixed Background Elements (Overlay/Bubbles/Creatures) --- */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-          {/* Overlay to darken bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          
-          {/* Bubbles */}
-          {bubbles.map((b) => (
-            <div
-              key={b.id}
-              className="bubble"
-              style={{
-                left: `${b.left}%`,
-                width: `${b.size}px`,
-                height: `${b.size}px`,
-                animationDuration: `${b.duration}s`,
-                animationDelay: `${b.id * 0.5}s`,
-              }}
-            />
-          ))}
+        {/* Overlay to darken bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-          {/* Creature Silhouettes (CSS approximations) */}
-          <div className="absolute top-20 left-10 w-32 h-12 bg-black/20 rounded-full blur-sm rotate-12 opacity-50" />
-          <div className="absolute top-40 right-20 w-48 h-16 bg-black/20 rounded-full blur-sm -rotate-6 opacity-50" />
+        {/* Bubbles */}
+        {bubbles.map((b) => (
+          <div
+            key={b.id}
+            className="bubble"
+            style={{
+              left: `${b.left}%`,
+              width: `${b.size}px`,
+              height: `${b.size}px`,
+              animationDuration: `${b.duration}s`,
+              animationDelay: `${b.id * 0.5}s`,
+            }}
+          />
+        ))}
+
+        {/* Creature Silhouettes (CSS approximations) */}
+        <div className="absolute top-20 left-10 w-32 h-12 bg-black/20 rounded-full blur-sm rotate-12 opacity-50" />
+        <div className="absolute top-40 right-20 w-48 h-16 bg-black/20 rounded-full blur-sm -rotate-6 opacity-50" />
       </div>
 
       {/* Scrollable Content Layer */}
-      <div className="absolute inset-0 z-10 overflow-x-hidden overflow-y-auto flex flex-col items-center justify-start pt-32 pb-20 px-4">
-      
-      <div className="z-10 flex flex-col items-center w-full max-w-7xl">
-        
-        {/* Title */}
-        <h1 className="text-4xl md:text-6xl font-bold mb-12 pixel-text-shadow tracking-widest text-center border-b-4 border-black/20 pb-4">
-          HACKATHON THEMES
-        </h1>
+      <div className="absolute inset-0 z-10 overflow-x-hidden overflow-y-auto flex flex-col items-center justify-start pt-20 sm:pt-32 pb-20 px-4">
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full px-4">
-          {themes.map((theme, index) => (
-            <div
-              key={theme.id}
-              className={`
+        <div className="z-10 flex flex-col items-center w-full max-w-7xl">
+
+          {/* Title */}
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-8 sm:mb-12 pixel-text-shadow tracking-widest text-center border-b-4 border-black/20 pb-4">
+            HACKATHON THEMES
+          </h1>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 w-full px-4">
+            {themes.map((theme, index) => (
+              <div
+                key={theme.id}
+                className={`
                 theme-card-float
                 relative flex flex-col items-center p-6
                 bg-black/40 border-4 ${theme.glowClass}
                 backdrop-blur-sm
                 transition-transform duration-300 hover:scale-105
               `}
-              style={{
-                borderColor: theme.color,
-                animationDelay: `${index * 0.5}s` // Stagger animations
-              }}
-            >
-              {/* Card Header Top Block */}
-              <div 
-                className="absolute -top-4 w-12 h-8 border-4 border-b-0 bg-black"
-                style={{ borderColor: theme.color, boxShadow: `0 -4px 10px ${theme.color}40` }}
-              ></div>
-
-
-              {/* Icon Container */}
-              <div className="w-40 h-40 mb-6 relative flex items-center justify-center">
-                 <ThemeIcon id={theme.id} color={theme.color} className="w-32 h-32" />
-              </div>
-
-              {/* Text Content */}
-              <h2 
-                className="text-xl md:text-2xl font-bold mb-2 text-center break-words hyphens-auto w-full"
-                style={{ color: theme.color, textShadow: '2px 2px 0 #000' }}
+                style={{
+                  borderColor: theme.color,
+                  animationDelay: `${index * 0.5}s` // Stagger animations
+                }}
               >
-                {theme.title}
-              </h2>
-              
-              <p className="text-sm md:text-base text-gray-200 text-center font-pixel tracking-wider">
-                {theme.description}
-              </p>
+                {/* Card Header Top Block */}
+                <div
+                  className="absolute -top-4 w-12 h-8 border-4 border-b-0 bg-black"
+                  style={{ borderColor: theme.color, boxShadow: `0 -4px 10px ${theme.color}40` }}
+                ></div>
 
-              {/* Decorative corners */}
-              <div className="absolute top-0 left-0 w-2 h-2 bg-white/50"></div>
-              <div className="absolute top-0 right-0 w-2 h-2 bg-white/50"></div>
-              <div className="absolute bottom-0 left-0 w-2 h-2 bg-white/50"></div>
-              <div className="absolute bottom-0 right-0 w-2 h-2 bg-white/50"></div>
-            </div>
-          ))}
+
+                {/* Icon Container */}
+                <div className="w-28 h-28 sm:w-40 sm:h-40 mb-4 sm:mb-6 relative flex items-center justify-center">
+                  <ThemeIcon id={theme.id} color={theme.color} className="w-32 h-32" />
+                </div>
+
+                {/* Text Content */}
+                <h2
+                  className="text-xl md:text-2xl font-bold mb-2 text-center break-words hyphens-auto w-full"
+                  style={{ color: theme.color, textShadow: '2px 2px 0 #000' }}
+                >
+                  {theme.title}
+                </h2>
+
+                <p className="text-sm md:text-base text-gray-200 text-center font-pixel tracking-wider">
+                  {theme.description}
+                </p>
+
+                {/* Decorative corners */}
+                <div className="absolute top-0 left-0 w-2 h-2 bg-white/50"></div>
+                <div className="absolute top-0 right-0 w-2 h-2 bg-white/50"></div>
+                <div className="absolute bottom-0 left-0 w-2 h-2 bg-white/50"></div>
+                <div className="absolute bottom-0 right-0 w-2 h-2 bg-white/50"></div>
+              </div>
+            ))}
+          </div>
+
         </div>
 
-      </div>
-      
       </div>
     </div>
   );

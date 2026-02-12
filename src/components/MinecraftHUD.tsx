@@ -96,16 +96,16 @@ const MinecraftHUD: React.FC = () => {
     );
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-start pointer-events-none">
+        <div className="fixed top-0 left-0 right-0 z-50 p-2 sm:p-4 flex justify-between items-start pointer-events-none">
             {/* Health Bar (Top Left) */}
-            <div className="flex gap-1">
+            <div className="flex gap-0.5 sm:gap-1">
                 {[...Array(10)].map((_, i) => (
                     <motion.div
                         key={`heart-${i}`}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: i * 0.05 }}
-                        className="w-6 h-6"
+                        className={`w-4 h-4 sm:w-6 sm:h-6 ${i >= 5 ? 'hidden sm:block' : ''}`}
                     >
                         <HeartIcon />
                     </motion.div>
@@ -113,14 +113,14 @@ const MinecraftHUD: React.FC = () => {
             </div>
 
             {/* Hunger Bar (Top Right) */}
-            <div className="flex gap-1 flex-row-reverse">
+            <div className="flex gap-0.5 sm:gap-1 flex-row-reverse">
                 {[...Array(10)].map((_, i) => (
                     <motion.div
                         key={`hunger-${i}`}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: i * 0.05 }}
-                        className="w-6 h-6"
+                        className={`w-4 h-4 sm:w-6 sm:h-6 ${i >= 5 ? 'hidden sm:block' : ''}`}
                     >
                         <HungerIcon />
                     </motion.div>

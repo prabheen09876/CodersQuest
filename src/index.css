@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-bottom: 80px;
+  }
   body {
     @apply bg-minecraft-sky font-pixel overflow-x-hidden;
     cursor: url("/assets/cursor-sword.png"), auto;

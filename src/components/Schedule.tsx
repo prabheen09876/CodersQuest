@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Schedule: React.FC = () => {
     return (
-        <div className="min-h-screen bg-[#2a0505] relative overflow-hidden font-minecraft text-white py-20 px-4">
+        <div className="min-h-screen bg-[#2a0505] relative overflow-hidden font-minecraft text-white py-12 px-3 sm:py-20 sm:px-4">
             {/* Lava Background Effect */}
             <div className="absolute inset-0 z-0 bg-[url('/assets/texture-netherrack.png')] opacity-20 bg-repeat"></div>
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-[#ff4500]/10 to-[#ff4500]/30 pointer-events-none"></div>
@@ -43,14 +43,14 @@ const Schedule: React.FC = () => {
                 <motion.h1
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    className="text-5xl md:text-7xl text-center mb-16 drop-shadow-[4px_4px_0_#3e0000]"
+                    className="text-3xl sm:text-5xl md:text-7xl text-center mb-10 sm:mb-16 drop-shadow-[4px_4px_0_#3e0000]"
                 >
                     <span className="text-[#ff4500]">EVENT</span> <span className="text-[#ffaa00]">SCHEDULE</span>
                 </motion.h1>
 
                 <div className="relative">
                     {/* Timeline Line */}
-                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-[#5c0000] -translate-x-1/2 hidden md:block"></div>
+                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-[#5c0000] -translate-x-1/2"></div>
 
                     <div className="space-y-12">
                         {[
@@ -72,17 +72,17 @@ const Schedule: React.FC = () => {
                                 <div className="w-full md:w-1/2 pl-12 md:pl-0 md:pr-12 md:text-right">
                                     {index % 2 !== 0 && (
                                         <div className="hidden md:block p-4 rounded-lg transition-all duration-300 group-hover:bg-[#ff4500]/10 group-hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] border border-transparent group-hover:border-[#ff4500]/30">
-                                            <h3 className={`text-2xl font-bold ${event.color}`}>{event.title}</h3>
-                                            <p className="text-gray-300 mt-2">{event.desc}</p>
+                                            <h3 className={`text-lg sm:text-2xl font-bold ${event.color}`}>{event.title}</h3>
+                                            <p className="text-sm sm:text-base text-gray-300 mt-2">{event.desc}</p>
                                         </div>
                                     )}
                                     {index % 2 === 0 && (
-                                        <div className="md:hidden p-4 rounded-lg transition-all duration-300 group-hover:bg-[#ff4500]/10 group-hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] border border-transparent group-hover:border-[#ff4500]/30">
-                                            <h3 className={`text-2xl font-bold ${event.color}`}>{event.title}</h3>
-                                            <p className="text-gray-300 mt-2">{event.desc}</p>
+                                        <div className="md:hidden p-3 sm:p-4 rounded-lg transition-all duration-300 group-hover:bg-[#ff4500]/10 group-hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] border border-transparent group-hover:border-[#ff4500]/30">
+                                            <h3 className={`text-lg sm:text-2xl font-bold ${event.color}`}>{event.title}</h3>
+                                            <p className="text-sm sm:text-base text-gray-300 mt-2">{event.desc}</p>
                                         </div>
                                     )}
-                                    <div className={`md:hidden text-xl font-bold text-[#ffaa00] mb-2`}>{event.time}</div>
+                                    <div className={`md:hidden text-base sm:text-xl font-bold text-[#ffaa00] mb-2`}>{event.time}</div>
                                 </div>
 
                                 {/* Timeline Node */}
@@ -91,14 +91,14 @@ const Schedule: React.FC = () => {
                                 <div className="w-full md:w-1/2 pl-12">
                                     {index % 2 === 0 && (
                                         <div className="hidden md:block p-4 rounded-lg transition-all duration-300 group-hover:bg-[#ff4500]/10 group-hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] border border-transparent group-hover:border-[#ff4500]/30">
-                                            <h3 className={`text-2xl font-bold ${event.color}`}>{event.title}</h3>
-                                            <p className="text-gray-300 mt-2">{event.desc}</p>
+                                            <h3 className={`text-lg sm:text-2xl font-bold ${event.color}`}>{event.title}</h3>
+                                            <p className="text-sm sm:text-base text-gray-300 mt-2">{event.desc}</p>
                                         </div>
                                     )}
                                     {index % 2 !== 0 && (
-                                        <div className="md:hidden p-4 rounded-lg transition-all duration-300 group-hover:bg-[#ff4500]/10 group-hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] border border-transparent group-hover:border-[#ff4500]/30">
-                                            <h3 className={`text-2xl font-bold ${event.color}`}>{event.title}</h3>
-                                            <p className="text-gray-300 mt-2">{event.desc}</p>
+                                        <div className="md:hidden p-3 sm:p-4 rounded-lg transition-all duration-300 group-hover:bg-[#ff4500]/10 group-hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] border border-transparent group-hover:border-[#ff4500]/30">
+                                            <h3 className={`text-lg sm:text-2xl font-bold ${event.color}`}>{event.title}</h3>
+                                            <p className="text-sm sm:text-base text-gray-300 mt-2">{event.desc}</p>
                                         </div>
                                     )}
                                     <div className={`hidden md:block text-xl font-bold text-[#ffaa00] ${index % 2 === 0 ? '' : 'text-right pr-12'}`}>
